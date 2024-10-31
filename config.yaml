@@ -1,0 +1,9 @@
+haha:
+  type: ThirdPlugin
+  param1: hello
+  param2: world
+
+huhu:
+  type: MyPlugin
+  param1: nice
+  param2: crown
