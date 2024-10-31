@@ -46,5 +46,5 @@ class PluginManager:
             else:
                 print(f"{plugin_name} does not have a 'run' method")
 
-    def get_instance(self, plugin_name): 
-        return self.plugins[plugin_name]()
+    def get_instance(self, plugin_name, config={}): 
+        return self.plugins[plugin_name](config)

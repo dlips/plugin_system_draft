@@ -7,3 +7,8 @@ huhu:
   type: MyPlugin
   param1: nice
   param2: crown
+
+haha2:
+  type: ThirdPlugin
+  param1: hello2
+  param2: world2
