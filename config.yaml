@@ -1,14 +1,14 @@
-haha:
-  type: ThirdPlugin
-  param1: hello
-  param2: world
+pv_garage:
+  type: PVForecast
+  kwPeak: 5
+  direction: south-west
+  latitude: 30
+  longitude: 50
 
-huhu:
-  type: MyPlugin
-  param1: nice
-  param2: crown
+batterie_keller:
+  type: Battery
+  capacity: 10
 
-haha2:
-  type: ThirdPlugin
-  param1: hello2
-  param2: world2
+wohnung:
+  type: HouseholdLoad
+  average_consumption: 80

@@ -16,7 +16,7 @@ class PluginRegistry(type):
 class Plugin(metaclass=PluginRegistry):
     pass
 
-class PluginManager:
+class PluginFactory:
     def __init__(self, plugin_dir="plugins"):
         self.load_plugins(plugin_dir)
         self.plugins = PluginRegistry.plugins
@@ -36,15 +36,5 @@ class PluginManager:
                 sys.modules[module_name] = module
                 spec.loader.exec_module(module)
 
-    def run_all(self):
-        # Using the PluginRegistry to access and run plugins
-        for plugin_name, plugin_cls in self.plugins.items():
-            plugin_instance = plugin_cls()
-            print(f"Executing {plugin_name}:")
-            if hasattr(plugin_instance, 'run'):
-                plugin_instance.run()
-            else:
-                print(f"{plugin_name} does not have a 'run' method")
-
-    def get_instance(self, plugin_name, config={}): 
-        return self.plugins[plugin_name](config)
+    def create_plugin(self, plugin_name, config={}): 
+        return self.plugins[plugin_name](**config)
